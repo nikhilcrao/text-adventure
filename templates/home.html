@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <h1>Escape the Rainforest!</h1>
+    {% if message %}<p><mark>{{ message }}</mark></p>{% endif %}
+    <pre>{{ console }}</pre>
+    <form method="POST" action="/process">
+        <input id="console" type="text" name="input" />
+        <input type="submit" />
+    </form>
+</div>
+
+<div>
+    <h2>Debug</h2>
+    <pre>
+{{ debug.world }}
+{{ debug.player }}
+{{ debug.room }}
+{{ debug.enemy }}
+    </pre>
+</div>
+
+<script type="text/javascript">
+   document.getElementById('console').focus();
+</script>
+{% endblock %}
